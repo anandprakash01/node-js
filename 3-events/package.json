@@ -1,0 +1,12 @@
+{
+  "name": "3-events",
+  "version": "1.0.0",
+  "description": "custom events",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anand prakash",
+  "license": "ISC"
+}
