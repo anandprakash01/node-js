@@ -34,4 +34,10 @@ const onServerUp = () => {
   console.log("Server is up and running on port 9999");
 };
 
-http.createServer(server).listen(9999, onServerUp);
+// http.createServer(server).listen(9999, onServerUp);
+
+const myServer = http.createServer();
+
+myServer.on("request", server);
+
+myServer.listen(9999, onServerUp);
