@@ -7,6 +7,15 @@ const sampleData = [
 ];
 const sampleDataString = JSON.stringify(sampleData);
 
+http
+  .createServer(() => {
+    // this call back fun runs on every request
+    console.log("Server is Getting Request on 9000 Port");
+  })
+  .listen(9000, () => {
+    console.log("Server is Up and Running...");
+  });
+
 //this server callback fun will run on every request
 const server = (request, response) => {
   // console.log("SERVER IS UP AND RUNNING...");
@@ -16,7 +25,6 @@ const server = (request, response) => {
   if (request.url == "/") {
     if (request.method == "GET") {
       // response.write("This is Home route, This is GET request");
-
       response.end(sampleDataString);
     } else if (request.method == "POST") {
       response.write("This route will be user to create New detail");
@@ -31,13 +39,14 @@ const server = (request, response) => {
 
 //this will run when server is up
 const onServerUp = () => {
-  console.log("Server is up and running on port 9999");
+  console.log("Server is up and running on port 8000");
 };
 
+// we have ports till 65000
 // http.createServer(server).listen(9999, onServerUp);
 
 const myServer = http.createServer();
 
 myServer.on("request", server);
 
-myServer.listen(9999, onServerUp);
+myServer.listen(8080, onServerUp);

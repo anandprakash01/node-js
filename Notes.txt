@@ -1,0 +1,76 @@
+npm init -y
+
+Client(Frond End)
+Server(Back End)-> Logic of the application, Stores Data
+    Java => Hibernate, Struts, Spring, Spring Boot, JSP etc.
+    php => Laravel, CI (Code Ingiter), Slim, Symphony
+    Ruby => RoR (Ruby on Rails)
+    Python => Django etc.
+    GoLang => ?
+    C# => MVC, Entity etc.
+    javaScript => Express js, Ember js, next js, etc.
+
+==> "React is a Library"
+->FrameWork vs Library
+Small set of methods and Classes(Small Sized)=> Library
+Huge set of methods and Classes(large sized)=> FrameWork
+
+- Node js is a Runtime Environment for javaScript, Node Package manager.
+- ExpressJS is a backEnd framework based on javaScript.(Open Source Server side as well
+    as Mobile application)
+
+Database DB =>(Textual Data)
+    We never Store PHYSICAL FILES inside a database like document,video, audio.
+
+Types of DB
+    - Structured Database : SQL(Structured Query Language)/RDBMS => MySQL, MSSQL, PostgreSQL, Oracle etc.
+    - UnStructured DataBase/ Non Relational DataBase : MongoDB(MQL-Mongo Query Language), Dynamo DB, cassandra DB etc.
+
+Request/ Reponses Cycle (Client-server Model)
+    - FrontEnd => BackEnd => Data Base => Backend => Frontend
+
+MERN(Mongo Express React and Node)
+MEAN(Mongo Express Angular and Node)
+Java FS Developer
+
+Full Stack => FE(HTML, CSS, JS)+ BE(PHP/JAVA/PYTHON/Express)
+
+Android: Java based and Kotlin Language
+IOS: Swift
+
+Hybrid Mobile development
+    Ionic
+    Cordava
+    React Native :
+    Flutter:
+
+Progressive Web app=> 
+
+
+Steps to setup a backend application based on NodeJS
+1. create a folder
+2. run npm init in the folder
+3. create a index.js file and write your code
+4. run the file by running command "node <filename>" e.g "node index.js"
+
+
+Core Modules : 
+1. os
+2. fs
+3. events
+4. http
+
+HTTP Server
+1. http module import
+2. http.createServer()
+3. listne(portNo)
+
+
+Postman => It is a tool used to test the output of the APIs.
+
+JS Engines
+
+Google Chrome => v8
+Mozilla Firefox => Spider Monkey
+Edge => Chakra
+etc

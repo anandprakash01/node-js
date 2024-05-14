@@ -7,7 +7,7 @@ const {uptime} = require("node:process");
 
 // console.log(os);
 
-console.log(os.arch());
+// console.log(os.arch());
 console.log(os.cpus());
 console.log("Cores available in this CPU : ", os.cpus().length);
 
@@ -15,9 +15,10 @@ console.log("A", os.EOL, "B");
 console.log("A\nB");
 
 console.log(os.hostname());
-console.log(os.freemem());
+console.log(os.userInfo());
+console.log(os.freemem()); // amount of free memory
 console.log(os.homedir());
-console.log(os.networkInterfaces());
+// console.log(os.networkInterfaces());
 console.log(os.platform());
 console.log(os.release());
 console.log(os.tmpdir());

@@ -5,10 +5,11 @@ const myEmitter = new events.EventEmitter();
 
 //Listen to the event
 
-myEmitter.on("signalChange", (signalColor) => {
+myEmitter.on("signalChange", e => {
+  // e=> signolColor
   //   console.log("MY EVENT LISTNER IS WORKING", signalColor);
-  const msg = new Date().toLocaleString() + " Signal changed to " + signalColor + "\n";
-  fs.appendFile("signal.log", msg, (error) => {
+  const msg = new Date().toLocaleString() + " Signal changed to " + e + "\n";
+  fs.appendFile("signal.log", msg, error => {
     if (error) {
       console.log("ERROR WHILE WRITING LOG", error);
     }

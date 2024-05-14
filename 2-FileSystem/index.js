@@ -6,42 +6,36 @@ const fs = require("node:fs");
 // if the file name given is already exist it will override that file and its content
 
 const fileName = "sample.txt";
+const fileContent = "Hello this is a file created by node js fs module :)🥳\n";
 
 // --------------writeFile--------------------------
+
 const writeFile = () => {
-  fs.writeFile(
-    fileName,
-    "Hello this is a file created by node js fs module\n",
-    (error) => {
-      console.log(error);
-    }
-  );
+  fs.writeFile(fileName, fileContent, error => {
+    console.log(error);
+  });
 };
 // writeFile();
 
 // ------------------Update File-----------------
+
 const appendFile = () => {
-  // fs.appendFile(fileName, "this is updated content\n", (error) => {
-  //   if (error) {
-  //     console.log(error);
-  //   }
-  // });
-
-  // if there is no such file named fileName it will create file
-
-  const msg = new Date().toLocaleString() + " User LogOut activity \n";
+  // if there is no such file named <fileName> it will create file
+  console.log(new Date());
+  const msg = new Date().toLocaleString() + " User Log in activity \n";
   // Asynchronus type
-  fs.appendFile(fileName, msg, (error) => {
+  fs.appendFile(fileName, msg, error => {
     if (error) {
       console.log(error);
     }
   });
   // synchronus type
-  //   fs.appendFileSync("sample.txt", msg);
+  // fs.appendFileSync(fileName, msg);
 };
 // appendFile();
 
 // --------------readFile---------------------
+
 const readFile = () => {
   const text = fs.readFile(fileName, (error, data) => {
     if (error) {
@@ -53,22 +47,22 @@ const readFile = () => {
     console.log(data.toString()); //this is text data
   });
 
-  console.log(text); // this will give undefineed because it asynchronous
+  console.log(text); // this will give undefined because it asynchronous
 
-  // const text2 = fs.readFileSync(fileName, (error, data) => {
-  //   if (error) {
-  //     console.log("ERROR WHILE READING FILE", error);
-  //     return;
-  //   }
-  //   console.log(data.toString());
-  // });
-  // console.log(text2.toString()); //this is synchronous thats why it is giving data
+  const text2 = fs.readFileSync(fileName, (error, data) => {
+    if (error) {
+      console.log("ERROR WHILE READING FILE", error);
+      return;
+    }
+    console.log(data.toString());
+  });
+  console.log(text2.toString()); //this is synchronous thats why it is giving data
 };
-// readFile();
+readFile();
 
 // --------------------deleteFile-----------------
 const deleteFile = () => {
-  fs.unlink(fileName, (error) => {
+  fs.unlink(fileName, error => {
     if (error) {
       console.log("Error while deleting file: ", error);
       return;
@@ -81,7 +75,7 @@ const deleteFile = () => {
 // -------------------createFolder-------------
 const createFolder = () => {
   const folderName = "logs";
-  fs.mkdir(folderName, (err) => {
+  fs.mkdir(folderName, err => {
     if (err) {
       console.log("ERROR CREATING FOLDER");
       return;
@@ -89,11 +83,11 @@ const createFolder = () => {
     console.log("Folder created successfully");
   });
 };
-// createFolder();
+createFolder();
 
 // ---------------check folder/file exists--------------
 const folderExists = () => {
   const exists = fs.existsSync("logs");
-  console.log(exists);
+  console.log("Folder Exist:", exists);
 };
 folderExists();
