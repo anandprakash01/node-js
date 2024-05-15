@@ -74,3 +74,69 @@ Google Chrome => v8
 Mozilla Firefox => Spider Monkey
 Edge => Chakra
 etc
+
+
+=============================================
+Publish module(common js file) in npm to use as npm-package
+    1.=> inside package.json name should be unique.
+    2.=> change main to module file name(which you want to publish)
+    3.=> npm login
+    4.=> npm publish
+
+
+Created Server -> Listening on a port 
+Sent a request => Server emits a request event => Event listerner is trigerred
+
+API (Application Programming Interface)
+Types : 
+    SOAP (Simple Object Access Protocol) => Envelops of Data (XML)
+    REST (ReprsEntational State Transfer) => Raw data (JSON)
+
+
+RESTful APIs (HTTP)
+Methods of APIs
+    GET : Used to retreive the data from the server (E.g Get the list of products, get a list of todos etc)
+    POST : Used to send the data to the server in order to create a resource (E.g Submitting a form, Placing an order etc)
+    PUT : Used to replace the data on the server (E.g Replace a social media post)
+    PATCH : Used to update the record on the server (E.g Update my profile etc)
+    DELETE : Used to delete any record on the server (E.g Delete my account etc)
+    OPTIONS : Used to check if any resource is accesible to the server (Pre Flight Respone - CORS)
+
+
+
+Static API : 
+        Which has same url and always return same set of data
+Dynamic API : 
+        Which has a dynamic part in URL or in Body and sends different data when the dynamic part changes
+
+
+API 
+React -> Backend (Node)
+Client => Server
+
+Environment Variables
+Set : Manual process done by a different way in different OS
+Get : process.env.VARIABLE_NAME
+
+Middleware : 
+Request -> Middleware (app.use()) -> API End point -> Response
+Request -> Middleware 1 (app.use) -> Middleware 2 -> Middleware 3 -> API End point -> Middleware 4 -> Middleware 5 -> Middleware n -> Response
+
+Application Level Middleware: Applies to the whole app (app.use())
+API Level : Only effects a particular end point
+Module Level : Applies to all the routes of a particular module
+
+Req and Response parts : 
+Header : Meta data (Basic information of API, server name, origin details etc)
+Body : Actual requested/sent data
+
+app.use(express.static("files"));
+// every file inside this folder can be directly acces from statically(Considered as static file)
+
+======Design Pattern
+
+MVC (Model View Controller)
+
+Controller : Receivs a request and perorms business logic, send the response
+Model : It determines the structure of the data (E.g username, dob, email)
+View : Where you see the UI (React JS)
