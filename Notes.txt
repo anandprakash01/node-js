@@ -140,3 +140,5 @@ MVC (Model View Controller)
 Controller : Receivs a request and perorms business logic, send the response
 Model : It determines the structure of the data (E.g username, dob, email)
 View : Where you see the UI (React JS)
+
+Layers : It is segregation of code.

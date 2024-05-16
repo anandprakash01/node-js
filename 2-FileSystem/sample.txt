@@ -1,4 +1,0 @@
-Hello this is a file created by node js fs module :)🥳
-13/5/2024, 6:27:18 pm User Log in activity 
-13/5/2024, 6:27:26 pm User Log in activity 
-13/5/2024, 6:27:35 pm User Log in activity 
