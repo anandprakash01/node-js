@@ -15,7 +15,7 @@ const port = 8080;
 app.use(express.json()); //app level middlewere
 
 const moduleLevelmiddleware = (req, res, next) => {
-    next();
+  next();
 };
 
 // app.use(userRouter); //connects userRoutes with app
@@ -23,5 +23,5 @@ app.use("/api/v1/user", moduleLevelmiddleware, userRouter); //add common parts o
 app.use("/api/v1/cart", cartRouter); //add common parts or route
 
 app.listen(port, () => {
-    console.log("Server is up and Running at:", port);
+  console.log("Server is up and Running at:", port);
 });

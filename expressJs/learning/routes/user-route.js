@@ -17,7 +17,7 @@ const router = express.Router();
 // 8. remove the common part of the route and put it in index file with app.use() in step 4
 
 const apiLevelMidlleware = (req, res, next) => {
-    next();
+  next();
 };
 
 router.get("/", apiLevelMidlleware, userController.user);

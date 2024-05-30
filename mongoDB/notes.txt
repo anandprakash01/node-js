@@ -1,0 +1,195 @@
+=> Database
+
+Relational DB (SQL DB) : MySQL, MSSQL, PostgreSQL etc
+Non Relational DB (No SQL DB) : MongoDB, Cassandra etc.
+
+-> MongoDB
+
+Rel DB : Database => Tables => Row & Cols => Cell / Fields
+Non Rel DB : Database => Collections => Documents => Fields
+
+BSON (Binary JSON)
+
+CRUD
+
+CLI (Command Line Interface) : Commands (Queries)
+GUI (Graphical User Interface) MongoDB Compass : Clicks
+
+Database requires a server and a port to run
+localhost:27017 -> default for MongoDB
+
+{
+    name: "John Doe",
+    mobileNo: "9876543210",
+    email: "john@email.com",
+    address: "123, ABC Street",
+    bloodGroup: "O+",
+    rollNo : "13245"
+}
+
+Insertion : 
+
+SQL : insert into students (John Doe, 9876543210)
+Mongo: db.students.insertOne({    name: "Jack",
+mobileNo: "9876543211",
+email: "jack@email.com",
+address: "123, ABC Street",
+bloodGroup: "O-",
+rollNo : "13246"})
+
+Commands / Queries
+
+insert() : To insert new record
+find() : To find records
+update() : To update records
+delete() : To delete records
+
+db.students.find({name: "John Doe"})
+
+Operators : 
+    Comparision
+        $gt
+        $lt
+        $gte
+        $lte
+        $ne
+        $eq
+        $in
+    Logical Operators
+        $and
+        $or
+        $not
+
+query to find the students whose age is greater than 20yrs
+db.students.find({
+    age : {
+        $gt : 20
+    }
+})
+
+query to find the students whose age is less than 30yrs
+db.students.find({
+    age : {
+        $lt: 30
+    }
+})
+
+query to find the students whose age is 17yrs
+db.students.find({
+    age: {
+        $eq: 17
+    }
+})
+
+query to find the students whose age is between 30 and 50yrs
+if(age > 30 && age < 50)
+
+db.students.find({
+    $and: [
+        {
+            age: {
+                $gt: 30
+            }
+        },
+        {
+            age: {
+                $lt: 50
+            }
+        }
+    ]
+})
+
+db.students.find({
+     age: { $gt: 30, $lt: 50 }
+})
+
+
+DB Schema (ecommerce)
+
+product : id, price, name, qty
+users
+orders etc
+
+
+Primary Key : A value which uniquely identifies a record in a colleciton/database.
+
+MongoDB : _id => UUID
+
+Pagination : 
+Page size = 10
+Total recores = 101
+
+Page 1 => 1-10
+Page 2 => 11-20
+Page 3 => 21-30
+....
+Page 11 => 101-110
+
+PageNo 1
+Limit = 10
+Skip => 0
+
+
+PageNo 2
+Limit = 10
+Skip => 10
+
+PageNo 3
+Limit = 10
+Skip => 20
+
+skip = (pageNo - 1) * pageSize
+
+
+query for all the products having price 499, 280 and 1249
+
+db.products.find({
+    price: {
+        $in: [499,280,1249]
+    }
+})
+
+Regex : Pattern matching
+
+phone : iPhone 9, iPhone X
+shoe : Mens shoes, womens shoes, kids shoes, reebok shoes, nike shoes etc
+
+
+Query First => Find the document and then update it
+Update First => Directly update the document
+
+
+
+Security:
+Change the password into some differnt value(Encrypted).
+
+Encoding - Decoding : Conversion of text to make is usable for multiple systems (This is not for security) (2 way process)
+
+Encryption - Decryption :  Conversion of plain text into non understandable text (cipher text) with the help of a key "asdfl-=acsdfase-fawef#klfasjlkf" ( 2 way process)
+
+Hashing : Conversion of plain text into non understandable format with the help of a key (salt) (1 way process)
+
+
+Authentication : Verifying the ID of the user (username and password) -> Login
+
+JWT (JSON Web Token) : It is a token which stores information of the authenticated user.
+
+Autorization : Checking if the user has access to a particular resoure -> Access Denied
+
+
+12345
+1234
+asdfl
+zxcv
+Abcd@1234
+Hello@123
+
+Generating a JWT : 
+Pre requisits : 
+    1. User information
+    2. Expriry time
+    3. Secret key
+    4. Library to generate JWT
+
+
+

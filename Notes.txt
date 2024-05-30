@@ -120,7 +120,7 @@ Get : process.env.VARIABLE_NAME
 
 Middleware : 
 Request -> Middleware (app.use()) -> API End point -> Response
-Request -> Middleware 1 (app.use) -> Middleware 2 -> Middleware 3 -> API End point -> Middleware 4 -> Middleware 5 -> Middleware n -> Response
+Request -> Middleware 1 (app.use) -> Middleware 2 -> Middleware 3 -> "API End point" -> Middleware 4 -> Middleware 5 -> Middleware n -> Response
 
 Application Level Middleware: Applies to the whole app (app.use())
 API Level : Only effects a particular end point
@@ -142,3 +142,87 @@ Model : It determines the structure of the data (E.g username, dob, email)
 View : Where you see the UI (React JS)
 
 Layers : It is segregation of code.
+
+=====Same Origin vs Cross Origin Policy
+
+CROSS ORIGIN POLICY IS IMPLEMENTED BY WEB BROWSERS
+
+CORS (Cross Origin Resource Sharing)
+
+Origin => Place from where your request is originated
+
+Cross Orign Example
+Origin => http://localhost:3000/
+Destination => http://localhost:5000/
+
+Origin => http://abc.com
+Destination => http://xyz.com
+
+Same Origin Example
+Origin => https://google.com
+Destination => https://google.com
+
+
+=========Database
+
+Relational DB (SQL DB) : MySQL, MSSQL, PostgreSQL etc
+Non Relational DB (No SQL DB) : MongoDB, Cassandra etc
+
+MongoDB
+
+Rel DB : Database => Tables => Row & Cols => Cell / Fields
+Non Rel DB : Database => Collections => Documents => Fields
+
+
+BSON (Binary JSON)
+
+CRUD
+CLI (Command Line Interface) : Commands (Queries)
+GUI (Graphical User Interface) MongoDB Compass : Clicks
+
+Database requires a server and a port to run
+mongodb://localhost:27017 -> default port
+
+
+{
+    name: "John Doe",
+    mobileNo: "9876543210",
+    email: "john@email.com",
+    address: "123, ABC Street",
+    bloodGroup: "O+",
+    rollNo : "13245"
+}
+
+Insertion : 
+
+SQL : insert into students (John Doe, 9876543210)
+Mongo: db.students.insertOne({    name: "Jack",
+mobileNo: "9876543211",
+email: "jack@email.com",
+address: "123, ABC Street",
+bloodGroup: "O-",
+rollNo : "13246"})
+
+Commands / Queries
+
+insert() : To insert new record
+find() : To find records
+update() : To update records
+delete() : To delete records
+
+db.students.find({name: "John Doe"})
+
+Operators : 
+Comparision
+    $gt
+    $lt
+    $gte
+    $lte
+    $ne
+    $eq
+    $in
+
+Logical Operators
+    $and
+    $or
+    $not
