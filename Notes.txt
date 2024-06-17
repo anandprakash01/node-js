@@ -226,3 +226,9 @@ Logical Operators
     $and
     $or
     $not
+
+
+
+
+
+FrontEnd(Firebase) -> Token -> Custom API (Backend) -> Backend will call Google API -> Validate Google Token -> Our Backend will generate own JWT -> Frontend
